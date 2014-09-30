@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+    <question>
+        <question-text>
+            What is the capital of Washington?    
+        </question-text>
+        <multiple-choice>true</multiple-choice>
+        <multiple-answer>false</multiple-answer>
+        <is-answer-required>true</is-answer-required>
+        <options>
+            <option>Seattle</option>
+            <option>Olympia</option>
+            <option>Washington DC</option>
+        </options>
+    </question>
+    <question>
+    	<question-text>
+    		Is the computer on or off?
+    	</question-text>
+        <is-answer-required>false</is-answer-required>
+        <multiple-choice>true</multiple-choice>
+        <options>
+            <option>On</option>
+            <option>Off</option>
+        </options>
+    </question>
+    <question>
+    	<question-text>
+    		Which cities are in US?
+    	</question-text>
+        <multiple-choice>true</multiple-choice>
+        <multiple-answer>true</multiple-answer>
+        <is-answer-required>true</is-answer-required>
+        <options>
+            <option>Delhi</option>
+            <option>New York City</option>
+            <option>Seattle</option>
+            <option>Winnipeg</option>
+        </options>
+    </question>
+    <question>
+    	<question-text>
+    		What is your name?
+    	</question-text>
+        <multiple-choice>false</multiple-choice>
+        <multiple-answer>false</multiple-answer>
+        <is-answer-required>true</is-answer-required>
+    </question>
+</quiz>
