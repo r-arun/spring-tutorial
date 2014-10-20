@@ -21,19 +21,23 @@
 		return false;
 	}
 	function checkInput() {
+		var validity = true;
 		if(isInputMandatory())	{
 			optionElement = $("#option");
 			if (optionElement !== null)  {
 				var tagName = optionElement[0].tagName;
 				if (tagName === "INPUT") {
 					if (optionElement.attr("type").toLowerCase() === "text") {
-						return optionElement.val() !== "";	
+						validity = optionElement.val() !== "";	
 					}
 				} else if (tagName === "SELECT") {
-					return optionElement.val() !== "";
+					validity = optionElement.val() !== "";
 				}
 			}
-            return true;
+			//TODO display an alert saying that input is invalid and ask
+			//use to try again.
+			console.log("Validity of input is " + validity);
+            return validity;
 		}
 	}
 	</script>

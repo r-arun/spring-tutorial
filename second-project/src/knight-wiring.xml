@@ -2,9 +2,54 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="knight" class="demo.Knight">
-	<constructor-arg ref="quest" />
+<bean id="duke1" class="chapter2.Juggler" />
+<bean id="duke2" class="chapter2.Juggler">
+        <constructor-arg value="0"/>
 </bean>
-<bean id="quest" class="demo.Quest" />
+<bean id="poem" class="chapter2.Sonnet515" />
+<bean id="duke3" class="chapter2.PoeticJuggler">
+	<constructor-arg value="10" />
+	<constructor-arg ref="poem" />
+</bean>
+<bean id="stage" class="chapter2.Stage" factory-method="getInstance" />
+<bean id="stage2" class="chapter2.Stage" factory-method="getInstance" />
+<bean id="ticket1" class="chapter2.Ticket" scope="prototype" />
+<bean id="ticket2" class="chapter2.Ticket" />
+<bean id="kenny" class="chapter2.Instrumentalist">
+	<property name="song" value="Jingle Bells" />
+	<property name="instrument" ref="guitar" />
+</bean>
 
+<bean id="keba" class="chapter2.Instrumentalist">
+	<property name="song" value="enga pona rasa" />
+	<property name="instrument">
+		<bean id="keba-guitar" class="chapter2.Guitar" />
+	</property>
+</bean>
+
+<bean id="kmMusic" class="chapter2.Orchestra">
+	<property name="song" value="Mettu podu" />
+	<property name="instruments">
+		<list>
+			<ref bean="guitar" />
+			<ref bean="grandPiano" />
+			<bean id="sivamaniClassicDrum" class="chapter2.Drums" />
+		</list>
+	</property>
+</bean>
+
+<bean id="testPerformer" class="chapter2.TestPropertyInstrumentalist">
+	<property name="song" value="Theradi veeethiyil" />
+	<property name="instrument" ref="sivamaniDrum" />
+	<property name="guitar" ref="guitar" />
+</bean>
+
+<bean id="guitar" class="chapter2.Guitar" />
+<bean id="grandPiano" class="chapter2.Piano" />
+<bean id="sivamaniDrum" class="chapter2.Drums" />
+<bean id="lyrics" class="chapter2.ConstructorCallPlusProperty">
+	<constructor-arg value="Karu Karu Vizhigalal" />
+	<constructor-arg value="Pachai Kili Muthuchharam" />
+	<property name="song" value="Kadhal Konjam Kaatru Konjam" />
+</bean>
 </beans>

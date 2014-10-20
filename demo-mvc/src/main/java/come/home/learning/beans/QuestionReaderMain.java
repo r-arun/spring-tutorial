@@ -5,6 +5,7 @@ import java.util.List;
 import come.home.learning.model.Question;
 
 public class QuestionReaderMain {
+	//TODO replace with Junit test class
 	public static void main(final String argsp[]) {
 		final QuestionReader reader = new QuestionReader();
 		final List<Question> questionList = reader.getQuestions();
