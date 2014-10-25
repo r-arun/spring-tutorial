@@ -10,37 +10,8 @@
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-	<script>
-	function isInputMandatory() {
-        var questionElement = $("#question");
-		if (questionElement !== null) {
-            var classArray = questionElement.attr("class").split(" ");
-            var index = $.inArray("answer-required", classArray);
-            return (index >= 0);
-		}
-		return false;
-	}
-	function checkInput() {
-		var validity = true;
-		if(isInputMandatory())	{
-			optionElement = $("#option");
-			if (optionElement !== null)  {
-				var tagName = optionElement[0].tagName;
-				if (tagName === "INPUT") {
-					if (optionElement.attr("type").toLowerCase() === "text") {
-						validity = optionElement.val() !== "";	
-					}
-				} else if (tagName === "SELECT") {
-					validity = optionElement.val() !== "";
-				}
-			}
-			//TODO display an alert saying that input is invalid and ask
-			//use to try again.
-			console.log("Validity of input is " + validity);
-            return validity;
-		}
-	}
-	</script>
+	<script src="resources/inputValidator.js"></script>
+	<div id="alert-box"></div>
 	<form onsubmit="return checkInput();">
         <app:displayQuestion questionModel="${question}" />
         <app:displayOptions options="${options}" optionsMap="${options.valueDescriptionMap}" />

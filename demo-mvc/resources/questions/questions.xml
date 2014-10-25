@@ -15,6 +15,29 @@
     </question>
     <question>
     	<question-text>
+    		Checkbox validity test question.
+    	</question-text>
+        <is-answer-required>true</is-answer-required>
+        <multiple-choice>true</multiple-choice>
+        <multiple-answer>true</multiple-answer>
+        <options>
+            <option>One</option>
+            <option>Two</option>
+        </options>
+    </question>
+    <question>
+    	<question-text>
+    		Radio button validity test question.
+    	</question-text>
+        <is-answer-required>true</is-answer-required>
+        <multiple-choice>true</multiple-choice>
+        <options>
+            <option>On</option>
+            <option>Off</option>
+        </options>
+    </question>
+    <question>
+    	<question-text>
     		Is the computer on or off?
     	</question-text>
         <is-answer-required>false</is-answer-required>

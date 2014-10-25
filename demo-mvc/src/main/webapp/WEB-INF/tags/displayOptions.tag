@@ -6,11 +6,11 @@
 <%@ attribute name="optionsMap" required="false" type="java.util.HashMap" %>
 <c:choose>
 	<c:when test="${options.multipleAnswer}">
-		<span id="${options.id}" class="${options.cssClass}">
+		<fieldset id="${options.id}" class="${options.cssClass}">
             <c:forEach var="option" items="${optionsMap}">
                 <input type="checkbox" name="${options.name}" value="${option.key}">${option.value}<br/>
             </c:forEach>
-        </span>
+        </fieldset>
 	</c:when>
 	<c:otherwise>
 		<c:choose>
@@ -25,11 +25,11 @@
                     </select>
                 </c:when>
                 <c:otherwise>
-                    <span id="${options.id}" class="${options.cssClass}">
+                    <fieldset id="${options.id}" class="${options.cssClass}">
                         <c:forEach var="option" items="${optionsMap}">
                             <input type="radio" name="${options.name}" value="${option.key}">${option.value}<br/>
                         </c:forEach>
-                    </span>
+                    </fieldset>
                 </c:otherwise>
                 </c:choose>
             </c:when>
