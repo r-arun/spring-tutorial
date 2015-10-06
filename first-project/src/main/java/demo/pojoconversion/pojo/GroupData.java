@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class GroupData {
 	private String groupName;
+	private PreferenceType preferenceType;
 	private List<ColumnData> columns;
 	
 	@Override
