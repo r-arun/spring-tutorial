@@ -1,8 +1,11 @@
 package come.home.learning.controllers;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,6 +50,26 @@ public class QuestionController {
         model.addAttribute("isAnswerRequired", question.isAnswerRequired());
         model.addAttribute("options", optionModel);
 		return "question";
+	}
+	
+	@RequestMapping(value = "/download")
+	public void serveCSVFile(final HttpServletResponse response) {
+        try {
+        	response.setContentType("text/csv");
+        	response.setCharacterEncoding("UTF-8");
+			response.setHeader("Content-Disposition", "attachment;filename=arun-sai.csv");
+			final String output = buildCSVAsString();
+			response.setContentLength(output.getBytes("UTF-8").length);
+        	response.getWriter().append(output);
+			response.getWriter().flush();
+		} catch (final IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private String buildCSVAsString() {
+		return "name,value,age\n" + "arun,5,27\n" + "sai,29,23\n";
 	}
 	
 	private Map<String, String> getOptionMap(final List <String> options) {
